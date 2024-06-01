@@ -79,8 +79,9 @@ nav {
 @media not screen and (min-width: 768px)  {
 	.header {
 		position: fixed;
+		height: 50px;
 		nav {
-			height: 50px;
+			height: 100%;
 		}
 		.logo {
 			display: none;
