@@ -90,6 +90,10 @@ main {
 	input {
 		display: none;
 	}
+	.highlight {
+		background-color: rgba(128, 128, 128, 0.2);
+		border-radius: 8px;
+	}
 }
 
 
@@ -136,10 +140,6 @@ input:checked + .docmenu-label + ul {
 	transition: opacity 80ms ease-out, max-height 1000ms linear, padding 100ms ease-out;
 }
 
-.highlight {
-	background-color: rgba(128, 128, 128, 0.2);
-	border-radius: 8px;
-}
 
 .docanchor {
 	text-decoration: none;

@@ -29,6 +29,7 @@ titles_from_headings:
 title: Nexus
 description: Server sectoring and synchronization for the game Space Engineers
 theme: null
+highlighter: rouge
 
 sass:
   style: compressed
