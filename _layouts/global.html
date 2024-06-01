@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ page.title }}</title>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" href="/css/global.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	{% if page.style %}
+		{% for stylesheet in page.style %}
+			<link rel="stylesheet" href="{{ stylesheet }}">
+		{% endfor %}
+	{% endif %}
+	{% if layout.style %}
+		{% for stylesheet in layout.style %}
+			<link rel="stylesheet" href="{{ stylesheet }}">
+		{% endfor %}
+	{% endif %}
+
+	{% if page.script %}
+		{% for js_file in page.script %}
+			<script src="{{ js_file }}"></script>
+		{% endfor %}
+	{% endif %}
+	{% if layout.script %}
+		{% for js_file in layout.script %}
+			<script src="{{ js_file }}"></script>
+		{% endfor %}
+	{% endif %}
+
+	<script src="/js/global.js" defer></script>
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="{{ page.title }}">
+	<meta property="og:image" content="{{ site.url }}/img/icon512.png">
+	<meta property="og:url" content="{{ page.url | absolute_url }}">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="{{ page.title }}">
+	<meta name="twitter:image" content="{{ site.url }}/img/icon512.png">
+
+	{% if page.description %}
+		<meta content="{{ page.description }}" property="og:description">
+		<meta property="twitter:description" content="{{ page.description }}">
+	{% else %}
+	<meta content="{{ site.description }}" property="og:description">
+	<meta property="twitter:description" content="{{ site.description }}">
+	{% endif %}
+
+</head>
+<body>
+	<header class="header">
+		<a class="logo" href="/">
+			<img src="/img/icon128.png" alt="icon">
+		</a>
+		<nav>
+			<input class="menu-btn" type="checkbox" id="menu-btn">
+			<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+			<ul class="menu">
+				{% include main_menu.html %}
+			</ul>
+		</nav>
+	</header>
+	<main>
+		{{ content }}
+	</main>
+	<footer>
+	</footer>
+</body>
+</html>
