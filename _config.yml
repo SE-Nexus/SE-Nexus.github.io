@@ -31,7 +31,7 @@ description: Server sectoring and synchronization for the game Space Engineers
 theme: null
 
 sass:
-  style: compact
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
