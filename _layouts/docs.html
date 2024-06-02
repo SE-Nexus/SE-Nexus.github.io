@@ -40,7 +40,7 @@ style:
 <div class="main-content">
 
 	{% capture anchor_body %}
-		<img src="/img/link.svg">
+		<img src="/img/link.svg" alt="link">
 	{% endcapture %}
 
 	{% include anchor_headings.html html=content anchorBody=anchor_body anchorClass='docanchor' anchorAttrs='aria-label="Permalink to %heading%"' headerAttrs='class="docheading"' h_min=2 %}
