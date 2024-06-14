@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# Welcome to Nexus documentation!
+# Welcome to NexusV3 documentation!
 
 ## Background Info
 Coding of Nexus began at the end of 2019. It was born out of desperation due to the lacking of performance a single server could do even on a high-end machine. A single server running on for example, a i9-9900k, would not even hit the peak of its performance capabilities and yet sim speed on the server would be dropping due to the amount of players and limitations of the game itself. 
