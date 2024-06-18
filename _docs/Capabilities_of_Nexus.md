@@ -2,7 +2,7 @@
 category: Capabilities of Nexus
 order: 1
 category_default: true
-description: Capabilities of Nexus
+description: Getting started with the Nexus Controller
 ---
 
 # The Capabilities of NexusV3
