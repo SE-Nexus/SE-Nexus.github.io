@@ -29,3 +29,11 @@ Nexus is officially only supported on Windows 10 and up including Windows Server
 # Downloading the NexusV3 Torch Plugin
 
 You can download the NexusV3 torch plugin from the torch website through the torch plugin installer or manually. Please make sure no previous versions of Nexus are installed as these systems do not work concurrently.
+
+# Setting up your PostgreSQL database
+
+PostgreSQL is a new requirement for the NexusV3 controller and must be installed for the controller to operate properly. You can find the specific download links for postgres [Here](https://www.postgresql.org/download/).
+
+It is recommended to simply download one of the windows package installers and select PGadmin in the installer sub components. PGadmin is a grapical viewer for postgreSQL that allows you to view, manage, export, and import data. Advanced users may opt to use docker containers on the same machine or run on an enitrely different machine. Please google or youtube those setup instructions yourself.
+
+Just make sure that your SQL database is secure and can be accessed by the only controller.
