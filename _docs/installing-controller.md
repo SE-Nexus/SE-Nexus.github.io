@@ -4,7 +4,7 @@ order: 2.1
 description: Downloading and installing the systems
 ---
 
-# Downloading the NexusV3 Controller
+# Installing the Controller
 
 The Nexus Controller is required for all Nexus systems. The latest version (NexusV3) is a paid software that can be purchased by visiting the Pricing page above. There are several tiers you can buy depending on your community' needs. After purchasing you will be redirected to show your license key and controller download link.
 
