@@ -1,6 +1,11 @@
 ---
 ---
 
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 2em;
+}
+
 .docmenu {
 	border-right: 1px solid gray;
 	box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, .5);
@@ -175,4 +180,55 @@ input:checked + .docmenu-label + ul {
 	li {
 		padding-top: 5px;
 	}
+}
+
+
+.doc-tag {
+	padding-left: 1em;
+	
+	img {
+		display: inline-block;
+		vertical-align: bottom;
+		margin-right: 5px;
+	}
+}
+
+.doc-note {
+	border-left: 3px solid #1f6feb;
+	.doc-tag-title {
+		color: #1f6feb;
+	}
+}
+
+.doc-tip {
+	border-left: 3px solid #238636;
+	.doc-tag-title {
+		color: #238636;
+	}
+}
+
+.doc-important {
+	border-left: 3px solid #ab7df8;
+	.doc-tag-title {
+		color: #ab7df8;
+	}
+}
+
+.doc-warning {
+	border-left: 3px solid #ffaa00;
+	.doc-tag-title {
+		color: #ffaa00;
+	}
+}
+
+.doc-caution {
+	border-left: 3px solid #da3633;
+	.doc-tag-title {
+		color: #da3633;
+	}
+}
+
+.highlight
+{
+	border-radius: 10px;
 }
