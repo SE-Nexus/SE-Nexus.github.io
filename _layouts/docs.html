@@ -16,9 +16,9 @@ style:
 		<label class="docmenu-label docmenu-item" for="{{ cat.name | uri_escape }}">
 		{% assign cat_default = cat.items | where: "category_default", true %}
 		{% if cat_default != empty %}
-			<a href="{{ cat_default.first.url }}">{{ cat.name | capitalize }}</a>
+			<a href="{{ cat_default.first.url }}">{{ cat.name }}</a>
 		{% else %}
-			<span>{{ cat.name | capitalize }}</span>
+			<span>{{ cat.name }}</span>
 		{% endif %}
 			<img src="/img/expand.svg" alt="expand">
 		</label>
