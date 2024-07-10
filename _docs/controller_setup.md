@@ -1,4 +1,4 @@
----
+﻿---
 category: Getting Started
 order: 2
 description: Setting up your NexusV3 Controller
