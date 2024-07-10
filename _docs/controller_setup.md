@@ -1,10 +1,36 @@
----
+﻿---
 category: Getting Started
 order: 2
 description: Setting up your NexusV3 Controller
 ---
 
 # First Time Setup
+
+<style>
+.warning-box {
+    border: 1px solid #ffa500;
+    background-color: #fff4e5;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    position: relative;
+}
+.warning-box::before {
+    content: '⚠️ [CAUTION]';
+    font-weight: bold;
+    color: #d9534f;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    background-color: #fff4e5;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+</style>
+
+<div class="warning-box">
+    Don't execute the code without commenting the test cases.
+</div>
 
 | :warning: WARNING          |
 |:---------------------------|
