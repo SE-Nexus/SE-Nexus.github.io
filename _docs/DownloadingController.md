@@ -1,6 +1,6 @@
 ---
 category: Getting Started
-order: 2
+order: 2.1
 description: Downloading and installing the systems
 ---
 

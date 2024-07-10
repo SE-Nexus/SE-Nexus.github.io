@@ -1,6 +1,6 @@
 ---
 category: Getting Started
-order: 2
+order: 2.3
 description: How to setup networking on your Nexus server
 ---
 

@@ -1,6 +1,6 @@
 ---
 category: Capabilities of Nexus
-order: 1
+order: 1.0
 category_default: true
 description: Getting started with the Nexus Controller
 ---
