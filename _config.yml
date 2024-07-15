@@ -18,8 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+url: "https://se-nexus.net"
+
 plugins:
   - jekyll-titles-from-headings
+  - jekyll-sitemap
 
 titles_from_headings:
   enabled:     true
