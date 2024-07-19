@@ -23,6 +23,7 @@ url: "https://www.se-nexus.net"
 plugins:
   - jekyll-titles-from-headings
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 titles_from_headings:
   enabled:     true
