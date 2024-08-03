@@ -15,6 +15,7 @@ jobs:
         install -m 600 -D /dev/null ~/.ssh/id_rsa
         echo "${{ secrets.LICENSE_SERVER_KEY }}" > ~/.ssh/id_rsa
         echo "${{ secrets.LICENSE_SERVER_SSH_HOST }}" > ~/.ssh/known_hosts
+        mkdir build/
         cp README.md build/
     - name: Deploy with rsync
       shell: bash
