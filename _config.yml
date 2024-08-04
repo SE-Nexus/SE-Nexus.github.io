@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-url: "https://www.se-nexus.net"
+url: "https://se-nexus.net"
 
 plugins:
   - jekyll-titles-from-headings
