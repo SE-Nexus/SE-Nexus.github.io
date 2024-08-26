@@ -1,8 +1,7 @@
 ---
-category: Capabilities of Nexus
-order: 1.0
-category_default: true
-description: Getting started with the Nexus Controller
+category: Getting Started
+order: 2.0
+description: Downloading and installing the systems
 ---
 
 # The Capabilities of NexusV3
