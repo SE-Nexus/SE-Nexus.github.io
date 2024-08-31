@@ -26,11 +26,11 @@ You will need to plan your torch instances separately as these can widely vary d
 
 Nexus is officially only supported on Windows 10 and up including Windows Server 2016 and up.
 
-# Downloading the NexusV3 Torch Plugin
+## Downloading the NexusV3 Torch Plugin
 
 You can download the NexusV3 torch plugin from the torch website through the torch plugin installer or manually. Please make sure no previous versions of Nexus are installed as these systems do not work concurrently.
 
-# Setting up your PostgreSQL database
+## Setting up your PostgreSQL database
 
 PostgreSQL is a new requirement for the NexusV3 controller and must be installed for the controller to operate properly. You can find the specific download links for postgres [Here](https://www.postgresql.org/download/).
 
