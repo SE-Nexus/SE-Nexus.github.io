@@ -299,3 +299,17 @@ footer
 		text-decoration: none;
 	}
 }
+
+.active-button {
+	display: block;
+	text-align: center;
+	margin: 4em auto 0 auto;
+	border-radius: 50px;
+	padding: 12px 24px;
+	background-color: #067af3;
+	border: 1px solid #067af3;
+	cursor: pointer;
+	color: white;
+	max-width: 238px;
+	text-decoration: none;
+}
