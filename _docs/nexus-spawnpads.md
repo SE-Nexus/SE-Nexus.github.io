@@ -55,7 +55,9 @@ Please check the API documenation for setup and guidlines.
 
 The possibilities are endless. If you would like to discuss any ideas with me about if certain things could work feel free to open a ticket, or discuess in a DM! I would love to see more servers utilize more customized events, and interactive spawning for players.
 
+{% include note.html content="A dummy object or action needs to be assigned to the single button on the spawnpad for players to use. This can be a timer, or programmable block trigger for doing cool actions on the grid when a player spawns! Up to you to use as you wish!" %}
 
+{% include warning.html content="Make sure that players are not able to edit the block or control it. This has direct access to grid spawning methods." %}
 
 
 
