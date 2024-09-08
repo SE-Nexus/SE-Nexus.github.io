@@ -9,9 +9,6 @@ var countdownInterval;
 
 addEventListener("load", () => 
 {
-	countdownInterval = setInterval(onInterval, 1000);
-	onInterval();
-
 	upgradeFinalize = document.querySelector("#upgrade-final");
 	upgradeSelect = document.querySelector("#upgrade-select");
 	upgradeForm = document.querySelector("#upgrade-license");
@@ -21,19 +18,6 @@ addEventListener("load", () =>
 	document.querySelector("#upgrade-cancel").addEventListener("click", onUpgradeCancel);
 	document.querySelector("#upgrade-checkout").addEventListener("click", onUpgradeCheckout);
 });
-
-function onInterval()
-{
-	var now = new Date().getTime();
-	if(now > countDownDate)
-	{
-		var children = document.querySelector(".main-content").children;
-		for (var i = 0; i < children.length; i++) {
-			children[i].classList.remove("hidden");
-		}
-		clearInterval(countdownInterval);
-	}
-}
 
 function onUpgradeLicense(event)
 {
