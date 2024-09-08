@@ -32,12 +32,7 @@ bool ServerAOnline = myNexusAPI.IsServerOnline(myNexusAPI.CurrentServerID);
 ```
 
 Registering server -> server mod messaging
-```
-
-
-
-
-
+```cs
 public void StartNexusNetworking()
 {
 	NexusAPI myNexusAPI = new NexusAPI()
