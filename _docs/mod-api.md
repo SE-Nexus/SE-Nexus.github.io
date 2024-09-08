@@ -10,8 +10,8 @@ description: API Reference
 
 Nexus has a build in API specific for space engineers mods. Currently only server side mods have access to this specific API. Meaning any data you need to send to clients will have to be developed by you.
 
-You can find the latest API below:
-https://github.com/SE-Nexus/NexusScripts/blob/master/ModAPI/NexusAPI.cs
+You can find the latest API [here](https://github.com/SE-Nexus/NexusScripts/blob/master/ModAPI/NexusAPI.cs)
+
 
 For those who have used TextHudAPI you should find that the API is now of a similar setup. Just register to listen for that nexus sync mod message on server start to get all relevant data and passed method delegates.
 
