@@ -1,8 +1,11 @@
 let upgradeFinalize = null;
 let upgradeSelect = null;
 let upgradeForm = null;
+let upgradeInput = null;
+let upgradeSubmit = null;
 const guidRegex = /^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$/;
 const domain = "https://api.se-nexus.net";
+let upgradeErrorTimeout = null;
 
 const countDownDate = new Date("2024-09-07T01:00Z").getTime();
 var countdownInterval;
@@ -12,6 +15,8 @@ addEventListener("load", () =>
 	upgradeFinalize = document.querySelector("#upgrade-final");
 	upgradeSelect = document.querySelector("#upgrade-select");
 	upgradeForm = document.querySelector("#upgrade-license");
+	upgradeInput = document.querySelector("#upgrade-license-input");
+	upgradeSubmit = document.querySelector("#upgrade-license-submit");
 	upgradeForm.addEventListener("submit", onUpgradeLicense);
 	setCheckoutStage(false);
 
@@ -27,23 +32,35 @@ function onUpgradeLicense(event)
 
 	var data = new FormData(upgradeForm);
 	var licenseId = data.get("licenseGUID");
-	if(licenseId && guidRegex.test(licenseId))
+	if(licenseId)
 	{
-		console.log(data);
-		setUpgradeOptions(null);
-	
-		fetch(domain + "/upgradeoptions", {
-			method: "POST",
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				license: licenseId
+		if (guidRegex.test(licenseId))
+		{
+			setUpgradeOptions(null);
+		
+			fetch(domain + "/upgradeoptions", {
+				method: "POST",
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					license: licenseId
+				})
 			})
-		})
-			.then(res => res.json())
-			.then(obj => setUpgradeOptions(obj.upgrades))
+				.then(res => res.json())
+				.then(obj => setUpgradeOptions(obj.upgrades))
+				.catch(err => {
+					console.error("Error while trying to get upgrades:", err);
+					showError("Unknown error!")
+					upgradeInput.value = "";
+				});
+		}
+		else
+		{
+			showError("Invalid license!");
+			upgradeInput.value = "";
+		}
 	}
 
 }
@@ -99,3 +116,17 @@ function onUpgradeCancel()
 	setCheckoutStage(false);
 }
 
+
+function showError(msg)
+{
+	if(upgradeErrorTimeout !== null)
+		clearTimeout(upgradeErrorTimeout);
+	upgradeSubmit.value = msg;
+	upgradeSubmit.classList.add("error");
+	upgradeErrorTimeout = setTimeout(() =>
+	{
+		upgradeSubmit.classList.remove("error");
+		upgradeSubmit.value = "Upgrade";
+		upgradeErrorTimeout = null;
+	}, 3000);
+}

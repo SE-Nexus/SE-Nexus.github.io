@@ -35,6 +35,10 @@ p {
 		cursor: pointer;
 		color: white;
 		width: 238px;
+		&.error {
+			background-color: #f30606;
+			border: 1px solid #f30606;
+		}
 	}
 
 	#upgrade-cancel {
@@ -54,4 +58,5 @@ p {
 		justify-content: center;
 		align-items: center;
 	}
+
 }
