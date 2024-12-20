@@ -248,10 +248,8 @@ nav {
 	}
 }
 
-p {
-	h1, h2, h3, h4, h5, h6 {
-		margin-top: 2em;
-	}
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 2em;
 }
 
 .main-content {
@@ -287,4 +285,17 @@ p {
 .no-transition
 {
 	transition: none !important;
+}
+
+footer
+{
+	position: relative;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	a {
+		color:#3a3f4d;
+		text-decoration: none;
+	}
 }

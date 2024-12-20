@@ -1,0 +1,29 @@
+---
+title: Pricing
+style: /css/pricing.css
+script: /js/pricing.js
+---
+
+<h1>Nexus v3</h1>
+<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+<stripe-pricing-table pricing-table-id="prctbl_1Pa34pP4WRD7l09Ob6RZGRth"
+publishable-key="pk_live_51PJbtbP4WRD7l09OGytNYJPYubq93JMpZQDyjl2n0fOI1zAl6VgOjRmIlpGsCaOHs60Brmfc5ZNQaZneirxxKewg003WUY1MX3">
+</stripe-pricing-table>
+
+<h2>Already have a license?</h2>
+<p>Enter your existing Nexus v3 license key below to upgrade to a higher tier.</p>
+
+
+<div id="upgrade" class="flex-column">
+	<form id="upgrade-license" class="flex-column">
+		<input id="upgrade-license-input" type="text" name="licenseGUID" placeholder="00000000-0000-0000-0000-000000000000">
+		<input id="upgrade-license-submit" type="submit" value="Upgrade" class="button">
+	</form>
+	<div id="upgrade-final" class="flex-column hidden">
+		<select id="upgrade-select"></select> 
+		<div class="flex-row">
+			<input class="button" type="button" id="upgrade-cancel" value="Cancel">
+			<input class="button" type="button" id="upgrade-checkout" value="Pay">
+		</div>
+	</div>
+</div>

@@ -1,8 +1,7 @@
 ---
-category: Capabilities of Nexus
-order: 1.0
-category_default: true
-description: Getting started with the Nexus Controller
+category: Getting Started
+order: 2.0
+description: Downloading and installing the systems
 ---
 
 # The Capabilities of NexusV3
@@ -74,7 +73,7 @@ For those who don't know, a Torus is simply a doughnut. I figure this will be th
 
 To configure this cluster, and center point is needed with a Radius, and Ring Radius (Cross-Section Radius). You can also add a direction vector (where the vector will be perpendicular to the ring radius)
 
-## What a Gate?
+## What's a Gate?
 A Nexus gate is a portal or wormhole that can be configured to send you to any location on any server. By default, Nexus Gates has a unique particle effect for inbound/outbound sides that can be viewed ingame. This particle effect can be changed with a different effect or disabled entirely allowing you to implement your own system or lore-specific functionality.
 
 The gate itself is simply defined by a center and radius. Anything inside of this radius is transported.
