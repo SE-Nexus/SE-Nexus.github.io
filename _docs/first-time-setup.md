@@ -15,7 +15,7 @@ Unzip the nexus controller into the lower directory, named "bin" in the example 
 
 When you start the nexus controller for the first time, the sister directories will be created, including: Configs, Logs, PlayerData, Plugins, Prefabs, Scripts, and WorldSaves.
 ```mermaid
-graph TD;
+flowchart TD;
     Nexus[Nexus Controller]-->Configs;
     Nexus[Nexus Controller]-->Logs;
     Nexus[Nexus Controller]-->PlayerData;
