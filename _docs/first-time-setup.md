@@ -7,7 +7,7 @@ description: Setting up your NexusV3 Controller
 
 The directory in which you choose to install the nexus controller will have *sister* directories for other files. Because of this, we recommend you create two directories: a directory that will contain every thing related to nexus controller, for example named "Nexus Controller", and contained within that, a directory to contain the nexus controller, for example named "bin". These directory names are just examples, and you can name your directories as you please.
 ```mermaid
-graph TD;
+flowchart TD;
     Nexus[Nexus Controller]-->bin;
 ```
 
