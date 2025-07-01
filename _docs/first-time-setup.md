@@ -6,25 +6,13 @@ description: Setting up your NexusV3 Controller
 # Directory Structure
 
 The directory in which you choose to install the nexus controller will have *sister* directories for other files. Because of this, we recommend you create two directories: a directory that will contain every thing related to nexus controller, for example named "Nexus Controller", and contained within that, a directory to contain the nexus controller, for example named "bin". These directory names are just examples, and you can name your directories as you please.
-```mermaid
-flowchart TD;
-    Nexus[Nexus Controller]-->bin;
-```
+
 ![](/img/FirstDirectory.png)
 
 Unzip the nexus controller into the lower directory, named "bin" in the example above.
 
 When you start the nexus controller for the first time, the sister directories will be created, including: Configs, Logs, PlayerData, Plugins, Prefabs, Scripts, and WorldSaves.
-```mermaid
-flowchart TD;
-    Nexus[Nexus Controller]-->Configs;
-    Nexus[Nexus Controller]-->Logs;
-    Nexus[Nexus Controller]-->PlayerData;
-    Nexus[Nexus Controller]-->Plugins;
-    Nexus[Nexus Controller]-->Prefabs;
-    Nexus[Nexus Controller]-->Scripts;
-    Nexus[Nexus Controller]-->WorldSaves;
-```
+
 ![](/img/SecondDirectory.png)
 # First Time Setup
 
