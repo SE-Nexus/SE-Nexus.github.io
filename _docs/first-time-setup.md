@@ -10,6 +10,7 @@ The directory in which you choose to install the nexus controller will have *sis
 flowchart TD;
     Nexus[Nexus Controller]-->bin;
 ```
+![](/img/FirstDirectory.png)
 
 Unzip the nexus controller into the lower directory, named "bin" in the example above.
 
@@ -24,7 +25,7 @@ flowchart TD;
     Nexus[Nexus Controller]-->Scripts;
     Nexus[Nexus Controller]-->WorldSaves;
 ```
-
+![](/img/SecondDirectory.png)
 # First Time Setup
 
 {% include warning.html content="Only run and activate the controller on the target machine you plan to run the controller on! Activation will bind the machine & IP to your license key. Resetting your activation request will require you to open a ticket in the nexus discord." %}
