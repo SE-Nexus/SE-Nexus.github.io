@@ -1,6 +1,6 @@
 ---
-category: Controller Setup
-order: 3.4
+category: Setup
+order: 3.3
 description: Setting Up Your Controller
 ---
 
