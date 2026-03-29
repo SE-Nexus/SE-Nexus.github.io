@@ -253,6 +253,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-content {
+	h2 {
+		padding-bottom: 0.3em;
+		border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+	}
+	h3 {
+		margin-top: 1.5em;
+		padding-left: 0.6em;
+		border-left: 3px solid var(--accent-color);
+	}
 	p {
 		color: var(--text-color-p)
 	}
