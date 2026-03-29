@@ -253,6 +253,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-content {
+
+	/* Headings */
 	h2 {
 		color: var(--accent-color);
 	}
@@ -261,30 +263,92 @@ h1, h2, h3, h4, h5, h6 {
 		color: rgba(244, 244, 244, 0.7);
 		font-weight: 400;
 	}
+
+	/* Paragraphs */
 	p {
-		color: var(--text-color-p)
+		color: var(--text-color-p);
 	}
+
+	/* Images */
 	img {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 100%;
 	}
+
+	/* Tables */
 	table {
-		width: 100%;
+		display: block;
+		width: max-content;
+		max-width: 100%;
+		overflow-x: auto;
+		border-spacing: 0;
 		border-collapse: collapse;
 		margin: 1em 0;
-		th, td {
-			border: 1px solid rgba(128, 128, 128, 0.4);
-			padding: 0.5em 0.75em;
-			text-align: center;
+	}
+	thead {
+		background-color: rgba(128, 128, 128, 0.15);
+	}
+	tbody tr:nth-child(even) {
+		background-color: rgba(128, 128, 128, 0.07);
+	}
+	th {
+		font-weight: 600;
+	}
+	th,
+	td {
+		border: 1px solid rgba(128, 128, 128, 0.4);
+		padding: 0.5em 1em;
+		text-align: center;
+	}
+
+	/* Inline code */
+	code {
+		padding: 0.2em 0.4em;
+		font-size: 85%;
+		background-color: rgba(128, 128, 128, 0.2);
+		border-radius: 6px;
+	}
+
+	/* Code blocks (override inline styles) */
+	pre {
+		padding: 1em;
+		overflow-x: auto;
+		border-radius: 6px;
+		background-color: rgba(0, 0, 0, 0.3);
+		code {
+			padding: 0;
+			font-size: 100%;
+			background-color: transparent;
+			border-radius: 0;
 		}
-		th {
-			background-color: rgba(128, 128, 128, 0.15);
-		}
-		tr:nth-child(even) {
-			background-color: rgba(128, 128, 128, 0.07);
-		}
+	}
+
+	/* Blockquotes */
+	blockquote {
+		margin: 1em 0;
+		padding: 0.5em 1em;
+		border-left: 3px solid rgba(128, 128, 128, 0.4);
+		color: rgba(244, 244, 244, 0.65);
+		> :first-child { margin-top: 0; }
+		> :last-child { margin-bottom: 0; }
+	}
+
+	/* Lists */
+	ul, ol {
+		padding-left: 2em;
+	}
+	li + li {
+		margin-top: 0.25em;
+	}
+
+	/* Horizontal rule */
+	hr {
+		border: none;
+		height: 1px;
+		background-color: rgba(128, 128, 128, 0.4);
+		margin: 2em 0;
 	}
 }
 
