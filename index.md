@@ -19,12 +19,12 @@ script: /js/index.js
             <span class="feature-label">Scalable Sectors</span>
         </div>
         <div class="feature">
-            <span class="feature-value">~0ms</span>
-            <span class="feature-label">Sync Latency</span>
+            <span class="feature-value">Seamless</span>
+            <span class="feature-label">Cross-Server Travel</span>
         </div>
         <div class="feature">
-            <span class="feature-value">24/7</span>
-            <span class="feature-label">Uptime Ready</span>
+            <span class="feature-value">Real-Time</span>
+            <span class="feature-label">Grid Sync</span>
         </div>
     </div>
 </div>
