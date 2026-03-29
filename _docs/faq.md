@@ -27,7 +27,7 @@ Yes. PostgreSQL is required for the NexusV3 controller to operate. You can insta
 If all of your torch servers and the controller are on the same machine or local network, you do not need to open ports externally. If your servers are on different networks, you will need to open the publisher and subscriber ports. It is **strongly recommended** to restrict these ports to trusted IPs only via firewall rules.
 
 ### What ports does Nexus use?
-By default, Nexus uses port **3100** for the subscriber and **3101** for the publisher. Each torch server instance also requires a unique direct communications port. All of these are configurable.
+By default, Nexus uses port **3100** for the subscriber and **3101** for the publisher. Both are configurable.
 
 ### Can I run multiple controllers on one machine?
 Yes, but you will need to configure each controller to use different publisher and subscriber ports to avoid conflicts.
