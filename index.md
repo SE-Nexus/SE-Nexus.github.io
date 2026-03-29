@@ -23,8 +23,8 @@ script: /js/index.js
             <span class="feature-label">Cross-Server Travel</span>
         </div>
         <div class="feature">
-            <span class="feature-value">Real-Time</span>
-            <span class="feature-label">Grid Sync</span>
+            <span class="feature-value">Automated</span>
+            <span class="feature-label">Grid Transfer</span>
         </div>
     </div>
 </div>
