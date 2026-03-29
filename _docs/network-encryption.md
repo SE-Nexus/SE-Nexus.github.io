@@ -1,6 +1,6 @@
 ---
-category: Networking
-order: 1.5
+category: Features
+order: 1.4
 description: Securing network traffic between controller and torch servers
 ---
 
