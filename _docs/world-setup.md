@@ -54,6 +54,19 @@ Server Type is how you want the server to behave either as a synced enviroment, 
 ### Internal Nexus Box IP & Port
 These boxes define how the controller talk to the individual server. If your controller and torch instances are on the same IP this can be infact a local 192.168.XXX.XXX IP. If this server is outside of your network you will need to provide the IP of the network explicitly. The port is the generated port that is assigned in your Nexus Global Plugin in Torch. These ports should be identical.
 
+### Network Encryption (Optional)
+
+Network encryption allows you to secure the communication between the controller and each torch server using AES-256 CBC encryption.
+
+**Quick overview:**
+- Enabled on **controller:** Settings → Network Configs → "Enable Network Encryption" → "Generate New Key"
+- Enabled on **torch servers:** Plugin UI → Check "Enable Network Encryption" → Paste the same key
+- **Critical:** All servers must use the **same encryption key**
+
+For comprehensive setup instructions, key management, troubleshooting, and best practices, see the [Network Encryption](network-encryption) documentation.
+
+{% include warning.html content="If you enable encryption on the controller, you MUST also enable encryption with the EXACT SAME key on ALL torch servers connecting to it, or they will fail to communicate." %}
+
 ### Public Torch IP & Port
 The public Torch IP and Port is what you use to direct connect to your server. This cannot be an internal network IP as outside players will also be using this IP and Port. This configured game port will override the one configured in the torch instance on startup to fix any discrepancies
 

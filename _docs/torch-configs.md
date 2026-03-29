@@ -25,6 +25,27 @@ In this version, two ports must be configured to match those described in the co
 | **Publisher Port** | `3101` | Must match the controller's publisher port |
 | **Server ID** | `10` | Must match the Server ID configured for this server in the controller |
 
+### Network Encryption
+
+Network encryption is optional and secures network traffic between controller and torch servers using AES-256 CBC encryption.
+
+| Setting | Default | Description |
+|---|---|---|
+| **Enable Network Encryption** | `false` | Enables encryption of all network traffic between controller and this server |
+| **Network Encryption Key** | *(random GUID)* | Encryption key shared between controller and server - **must match on both** |
+
+**Setup Summary:**
+1. On **controller:** Settings → Network Configs → Check "Enable Network Encryption" → Click "Generate New Key"
+2. **Copy** the generated GUID key
+3. On **each torch server:** Plugin UI → Check "Enable Network Encryption" → Paste the key
+4. **Restart** controller and all torch servers
+
+**Critical Requirement:** All connected servers must have the **same encryption key** for successful communication.
+
+For complete setup instructions, troubleshooting, and best practices, see the [Network Encryption](network-encryption) guide.
+
+{% include warning.html content="If you enable encryption, ALL torch servers connecting to this controller MUST have encryption enabled with the EXACT SAME key. If keys don't match, servers will fail to communicate and you'll see decryption errors in the logs." %}
+
 {% include warning.html content="The Publisher and Subscriber ports for each instance MUST be open to the controller and vice versa. It is highly recommended when opening the ports that you restrict the network travel to only authorized IPs of the controller and servers to prevent any un-authorized traffic. Please read through the networking setup at the beginning of this documentation." %}
 
 {% include warning.html content="When dealing with networks outside of your sphere of control, please make sure to use caution and understand network safety. Port-forwarding and firewalls may need to be adjusted to talk to other networks internally (LAN) or globally (WAN). It is assumed that you understand how to allow communication in such a manner." %}
@@ -50,7 +71,7 @@ When a server is **not** assigned to a Config Group in the controller, the follo
 | Setting | Default | Description |
 |---|---|---|
 | **Enable Server Abbreviations** | `false` | Prepends the server abbreviation to cross-server chat messages |
-| **Enable Chat Broadcaster Channel Everyone** | `true` | Allows the broadcaster channel to send messages to all players |
+| **Enable Chat Broadcaster Channel Everyone** | `true` | Allows Laser Antennas to broadcast to "Everyone" across the cluster (see [Laser Antenna Broadcaster](laser-antenna-broadcaster)) |
 | **MOTD Title** | *(empty)* | Message of the Day title shown to players on join |
 | **MOTD** | *(empty)* | Message of the Day body text |
 

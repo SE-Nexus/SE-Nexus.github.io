@@ -38,3 +38,14 @@ PostgreSQL is a new requirement for the NexusV3 controller and must be installed
 It is recommended to simply download one of the windows package installers and select PGadmin in the installer sub components. PGadmin is a grapical viewer for postgreSQL that allows you to view, manage, export, and import data. Advanced users may opt to use docker containers on the same machine or run on an enitrely different machine. Please google or youtube those setup instructions yourself.
 
 Just make sure that your SQL database is secure and can be accessed by the only controller.
+
+## Network Encryption (Optional)
+
+The NexusV3 controller supports optional network encryption to secure communication between the controller and torch servers. This feature is optional and defaults to disabled for maximum performance.
+
+**Quick decision:**
+- Running on **private LAN only?** → Leave encryption disabled
+- Connecting **across internet or untrusted networks?** → Enable encryption
+- Have **compliance requirements?** → Enable encryption
+
+For complete setup instructions, configuration details, and troubleshooting, see the [Network Encryption](network-encryption) guide.
