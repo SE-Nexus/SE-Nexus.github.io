@@ -254,13 +254,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-content {
 	h2 {
-		padding-bottom: 0.3em;
-		border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+		color: var(--accent-color);
 	}
 	h3 {
 		margin-top: 1.5em;
-		padding-left: 0.6em;
-		border-left: 3px solid var(--accent-color);
+		color: rgba(244, 244, 244, 0.7);
+		font-weight: 400;
 	}
 	p {
 		color: var(--text-color-p)
@@ -270,6 +269,22 @@ h1, h2, h3, h4, h5, h6 {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 100%;
+	}
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 1em 0;
+		th, td {
+			border: 1px solid rgba(128, 128, 128, 0.4);
+			padding: 0.5em 0.75em;
+			text-align: center;
+		}
+		th {
+			background-color: rgba(128, 128, 128, 0.15);
+		}
+		tr:nth-child(even) {
+			background-color: rgba(128, 128, 128, 0.07);
+		}
 	}
 }
 
