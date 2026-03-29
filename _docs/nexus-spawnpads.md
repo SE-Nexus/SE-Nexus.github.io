@@ -1,7 +1,8 @@
 ---
-category: Misc Features
+category: Features
 order: 5.0
-description: Collection of Miscellaneous Nexus Features
+category_default: true
+description: Configuring Nexus spawn pads
 ---
 
 # Nexus SpawnPads

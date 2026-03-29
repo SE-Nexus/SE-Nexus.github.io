@@ -1,6 +1,6 @@
 ---
-category: Getting Started
-order: 2.5
+category: Features
+order: 5.3
 description: Overview of all synchronized systems
 ---
 

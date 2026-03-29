@@ -1,5 +1,5 @@
 ---
-category: Setup
+category: Controller Setup
 order: 3.1
 description: Creating clusters and sectors in the controller
 ---

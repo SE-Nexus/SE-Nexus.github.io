@@ -1,7 +1,7 @@
 ---
-category: Setup
-order: 3.1
-description: Setting Up Your Controller
+category: Controller Setup
+order: 3.05
+description: Step-by-step world setup walkthrough
 ---
 
 # Nexus World Setup

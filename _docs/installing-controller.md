@@ -1,7 +1,8 @@
 ---
-category: Getting Started
-order: 2.1
-description: Downloading and installing the systems
+category: Installation
+order: 2.0
+category_default: true
+description: Downloading and installing the controller
 ---
 
 # Installing the Controller

@@ -1,7 +1,7 @@
 ---
 category: Torch Setup
 order: 4.1
-description: Managing Server Config Groups
+description: Managing shared server config groups
 ---
 
 # Server Config Groups

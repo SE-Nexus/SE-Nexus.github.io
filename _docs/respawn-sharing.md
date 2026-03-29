@@ -1,7 +1,7 @@
 ---
-category: Misc Features
+category: Features
 order: 5.2
-description: Collection of Miscellaneous Nexus Features
+description: Sharing respawn blocks across servers
 ---
 
 # Respawn Sharing

@@ -1,7 +1,7 @@
 ---
-category: Getting Started
-order: 2.3
-description: How to setup networking on your Nexus server
+category: Installation
+order: 2.2
+description: Networking ports and firewall setup
 ---
 
 # Nexus Networking

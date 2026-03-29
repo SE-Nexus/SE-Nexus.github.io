@@ -1,6 +1,7 @@
 ---
-category: Setup
+category: Controller Setup
 order: 3.0
+category_default: true
 description: Adding and configuring servers in the controller
 ---
 

@@ -1,7 +1,7 @@
 ---
 category: Torch Setup
-order: 4.1
-description: Setting Up Your Torch Servers
+order: 4.2
+description: Verifying your torch server is ready
 ---
 
 # Torch Ready

@@ -1,7 +1,7 @@
 ---
-category: Setup
+category: Controller Setup
 order: 3.4
-description: Setting Up Your Controller
+description: Adding scripts and prefabs to the controller
 ---
 
 # Script Setup

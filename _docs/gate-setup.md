@@ -1,7 +1,7 @@
 ---
-category: Setup
+category: Controller Setup
 order: 3.2
-description: Setting Up Your Controller
+description: Configuring Nexus gates and wormholes
 ---
 
 # Nexus Gates

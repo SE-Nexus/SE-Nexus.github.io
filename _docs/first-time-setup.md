@@ -1,7 +1,7 @@
 ---
-category: Getting Started
-order: 2.2
-description: Setting up your NexusV3 Controller
+category: Installation
+order: 2.1
+description: First time setup and controller settings
 ---
 
 # Directory Structure

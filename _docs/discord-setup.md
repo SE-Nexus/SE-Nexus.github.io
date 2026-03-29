@@ -1,7 +1,7 @@
 ---
-category: Setup
-order: 3.3
-description: Setting Up Your Controller
+category: Controller Setup
+order: 3.5
+description: Setting up the Discord bot bridge
 ---
 
 # Discord Setup

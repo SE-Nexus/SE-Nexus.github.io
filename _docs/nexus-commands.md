@@ -1,7 +1,7 @@
 ---
-category: Getting Started
-order: 2.4
-description: Ingame Commands
+category: Features
+order: 5.4
+description: Ingame chat commands reference
 ---
 
 # Ingame Commands

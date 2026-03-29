@@ -1,7 +1,8 @@
 ---
-category: Getting Started
-order: 2.0
-description: Downloading and installing the systems
+category: Introduction
+order: 1.0
+category_default: true
+description: Overview of NexusV3 and its core systems
 ---
 
 # The Capabilities of NexusV3

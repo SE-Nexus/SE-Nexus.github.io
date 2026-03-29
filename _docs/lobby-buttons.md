@@ -1,7 +1,7 @@
 ---
-category: Misc Features
+category: Features
 order: 5.1
-description: Collection of Miscellaneous Nexus Features
+description: Using lobby buttons and URL popups
 ---
 
 # Lobby Buttons & URLs

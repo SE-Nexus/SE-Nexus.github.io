@@ -1,7 +1,8 @@
 ---
 category: FAQ
-order: 6.1
-description: Frequently Asked Questions
+order: 6.0
+category_default: true
+description: Common questions and answers
 ---
 
 # Frequently Asked Questions

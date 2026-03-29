@@ -1,7 +1,8 @@
 ---
 category: Torch Setup
 order: 4.0
-description: Setting Up Your Torch Servers
+category_default: true
+description: Configuring the Nexus torch plugin
 ---
 
 # Torch Plugin Configs

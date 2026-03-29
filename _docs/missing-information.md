@@ -1,7 +1,7 @@
 ---
 category: FAQ
-order: 6.0
-description: Frequently Asked Questions
+order: 6.1
+description: Reporting missing or incorrect content
 ---
 
 # Missing Website Information
