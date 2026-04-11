@@ -147,13 +147,77 @@ private void MessageHandler(object obj)
 
 ## Region Data
 
-On initialization, the API also provides raw Nexus region data including all clusters, servers, and sectors. This data can be used to understand the network topology from within your mod:
+On initialization, the API also provides raw Nexus region data including all clusters, servers, sectors, and gates. This data can be used to understand the network topology from within your mod. Below is a complete reference to the `ServerDataMsgAPI` data structure:
 
-- **Clusters** — All configured clusters and their properties
-- **Servers** — All registered servers and their configurations
-- **Sectors** — All sector definitions (shapes, positions, assignments)
-- **Current Server ID** — The ID of the server your mod is running on
-- **Current Cluster ID** — The ID of the cluster the current server belongs to
+### ServerDataMsgAPI
+
+The main data container that holds all region configuration information.
+
+| Field | Proto# | Type | Description |
+|---|---|---|---|
+| `clusters` | 10 | `List<ClusterData>` | All clusters in the region |
+| `servers` | 20 | `List<ServerData>` | All servers in the region |
+| `sectors` | 30 | `List<SectorData>` | All sectors in the region |
+| `thisServerID` | 40 | `byte` | The ID of the current server |
+| `thisClusterID` | 50 | `byte` | The ID of the cluster this server belongs to |
+| `gates` | 60 | `List<GateData>` | All gates available on the outbound server |
+
+### GateData
+
+Configuration data for a gate portal.
+
+| Field | Proto# | Type | Description |
+|---|---|---|---|
+| `Name` | 5 | `string` | Display name of the gate |
+| `isEnabled` | 10 | `bool` | Whether the gate is active |
+| `GateScript` | 15 | `string` | Name of the script to invoke for this gate |
+| `OneWay` | 20 | `bool` | If true, only Gate1→Gate2 transfer is allowed |
+| `Description1` | 30 | `string` | Description for gate position 1 |
+| `Description2` | 35 | `string` | Description for gate position 2 |
+| `Gate1ServerID` | 40 | `byte` | Server ID hosting gate position 1 |
+| `Gate2ServerID` | 45 | `byte` | Server ID hosting gate position 2 |
+| `VP1x`, `VP1y`, `VP1z` | 50, 55, 60 | `double` | World position coordinates for gate 1 |
+| `VP2x`, `VP2y`, `VP2z` | 65, 70, 75 | `double` | World position coordinates for gate 2 |
+| `VD1x`, `VD1y`, `VD1z` | 80, 85, 90 | `double` | Direction vector for gate 1 |
+| `VD2x`, `VD2y`, `VD2z` | 95, 100, 105 | `double` | Direction vector for gate 2 |
+| `DetectionRadius1` | 110 | `double` | Detection radius in meters for gate 1 |
+| `DetectionRadius2` | 115 | `double` | Detection radius in meters for gate 2 |
+| `ParticleEffect1` | 120 | `string` | Particle effect name for gate 1 |
+| `ParticleEffect2` | 125 | `string` | Particle effect name for gate 2 |
+| `GateSpawnDistance` | 150 | `double` | Distance from gate center to spawn incoming grids |
+
+### ClusterData
+
+Configuration data for a cluster.
+
+| Field | Proto# | Type | Description |
+|---|---|---|---|
+| `ClusterID` | 10 | `byte` | Unique identifier for this cluster |
+| `ClusterName` | 20 | `string` | Display name of the cluster |
+| `X`, `Y`, `Z` | 30, 35, 40 | `long` | Center coordinates of the cluster |
+| `ClusterSize` | 50 | `long` | Size of the cluster in meters |
+
+### ServerData
+
+Configuration data for a server.
+
+| Field | Proto# | Type | Description |
+|---|---|---|---|
+| `ServerID` | 10 | `byte` | Unique identifier for this server |
+| `ServerName` | 20 | `string` | Display name of the server |
+| `ClusterID` | 30 | `byte` | ID of the cluster this server belongs to |
+
+### SectorData
+
+Configuration data for a sector (subdivision of space).
+
+| Field | Proto# | Type | Description |
+|---|---|---|---|
+| `SectorID` | 10 | `int` | Unique identifier for this sector |
+| `SectorName` | 20 | `string` | Display name of the sector |
+| `OnServerID` | 30 | `byte` | Server ID that manages this sector |
+| `X`, `Y`, `Z` | 40, 50, 60 | `long` | Center coordinates of the sector |
+| `SectorSize` | 70 | `long` | Size of the sector in meters |
 
 ## Edge Cases
 Please note that Nexus cannot guarantee that messages are received on target servers. If the server has crashed, frozen, or is otherwise unreachable, your message could be lost in transit.
