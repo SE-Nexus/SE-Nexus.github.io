@@ -31,6 +31,7 @@ Plugins can be distributed as either:
 ### Creating a Plugin Project
 
 1. **Create a new Class Library project** targeting `.NET 8`:
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
@@ -46,6 +47,7 @@ Plugins can be distributed as either:
 ```
 
 2. **Create a plugin class** that inherits from `ControllerPluginAPI`:
+
 ```csharp
 using NGController.PluginAPI;
 using System;
@@ -81,6 +83,7 @@ namespace MyPlugin
 ```
 
 3. **Create a manifest file** at the root of your plugin folder:
+
 ```xml
 <?xml version="1.0"?>
 <ControllerPluginManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -145,6 +148,7 @@ The `manifest.xml` file describes your plugin. Required fields:
 4. Restart the controller
 
 Example structure:
+
 ```
 Plugins/
 └── MyPlugin/
@@ -160,6 +164,7 @@ Plugins/
 3. Restart the controller
 
 Example structure:
+
 ```
 Plugins/
 └── MyPlugin.zip
