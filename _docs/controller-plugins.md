@@ -56,7 +56,7 @@ namespace MyPlugin
     public class MyControllerPlugin : ControllerPluginAPI
     {
         public override Version PluginVersion => new Version(1, 0, 0);
-        
+
         public override UserControl UserControl => new MyPluginUserControl();
 
         public override async Task StartService()
