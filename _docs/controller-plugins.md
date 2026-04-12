@@ -361,6 +361,227 @@ namespace HelloWorldPlugin
 </UserControl>
 ```
 
+## Available Services
+
+The controller provides several built-in services that you can inject into your plugin to access common functionality. These services are registered in the dependency injection container and available for constructor injection.
+
+### Service Reference
+
+| Service | Purpose |
+|---|---|
+| `ControllerConfigService` | Access and manage controller configuration (database settings, Discord config, application paths) |
+| `ControllerSQLService` | Query and manage the PostgreSQL database; execute migrations and manage database connections |
+| `NexusService` | Core Nexus networking; access network poller, subscriber, publisher, and request-reply systems |
+| `DiscordService` | Integrate with Discord; send messages, manage commands, and interact with Discord guilds and channels |
+| `ScriptService` | Manage Nexus scripts and prefabs; access script configuration and prefab data |
+| `ISnackbarService` | Display notifications and UI feedback to the user through snackbar messages |
+| `PageService` | Navigate to and retrieve WPF pages from the UI layer |
+| `ApplicationHostService` | Access application-level information and lifecycle management |
+| `AutoUpdateService` | Check for and manage application updates |
+
+### Usage Examples
+
+#### Database Access
+
+Inject `ControllerSQLService` to access the database:
+
+```csharp
+using NGController.Services;
+using NGController.PluginAPI;
+
+public class MyControllerPlugin : ControllerPluginAPI
+{
+    private readonly ControllerSQLService _sqlService;
+
+    public MyControllerPlugin(ControllerSQLService sqlService)
+    {
+        _sqlService = sqlService;
+    }
+
+    public override async Task StartService()
+    {
+        if (_sqlService.TryOpenConnection(out var connection))
+        {
+            using (connection)
+            {
+                // Execute queries or use Entity Framework Core
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM your_table LIMIT 10";
+                // ... execute command
+            }
+        }
+        await base.StartService();
+    }
+}
+```
+
+#### Discord Integration
+
+Inject `DiscordService` to send messages or perform Discord actions:
+
+```csharp
+using NGController.Services;
+using NGController.PluginAPI;
+using Discord.WebSocket;
+
+public class MyControllerPlugin : ControllerPluginAPI
+{
+    private readonly DiscordService _discordService;
+
+    public MyControllerPlugin(DiscordService discordService)
+    {
+        _discordService = discordService;
+    }
+
+    public override async Task StartService()
+    {
+        // Access Discord client for sending messages, managing roles, etc.
+        var discordClient = DiscordService.dClient;
+        if (discordClient?.ConnectionState == Discord.ConnectionState.Connected)
+        {
+            // Send messages to channels
+            var channel = discordClient.GetChannel(channelId) as SocketTextChannel;
+            await channel?.SendMessageAsync("Plugin started!");
+        }
+        await base.StartService();
+    }
+}
+```
+
+#### Configuration Access
+
+Inject `ControllerConfigService` to access application configuration:
+
+```csharp
+using NGController.Services;
+using NGController.PluginAPI;
+
+public class MyControllerPlugin : ControllerPluginAPI
+{
+    private readonly ControllerConfigService _configService;
+
+    public MyControllerPlugin(ControllerConfigService configService)
+    {
+        _configService = configService;
+    }
+
+    public override async Task StartService()
+    {
+        var config = _configService.MainConfigs;
+        var scriptsFolder = ControllerConfigService.ScriptsFolder;
+        var configStoragePath = ControllerConfigService.ConfigStoragePath;
+
+        // Use configuration values for your plugin
+        await base.StartService();
+    }
+}
+```
+
+#### Nexus Networking
+
+Inject `NexusService` to access network communication:
+
+```csharp
+using NGController.Services;
+using NGController.PluginAPI;
+using NexusAPI.Networking;
+
+public class MyControllerPlugin : ControllerPluginAPI
+{
+    private readonly NexusService _nexusService;
+
+    public MyControllerPlugin(NexusService nexusService)
+    {
+        _nexusService = nexusService;
+    }
+
+    public override void StartNetworking()
+    {
+        // Subscribe to network messages
+        NexusService.msgSubscriber?.TrySubscribe(
+            MessageType.ChatSync,
+            HandleChatMessage
+        );
+        base.StartNetworking();
+    }
+
+    private void HandleChatMessage(Msg message)
+    {
+        // Handle incoming network message
+    }
+}
+```
+
+#### Publishing Messages
+
+To send data to the Nexus network, create a message object, populate it with data, and publish it using `.Publish()`. Inject `ControllerConfigService` to access configuration data like gates, clusters, or servers:
+
+```csharp
+using NGController.Services;
+using NGController.PluginAPI;
+using NexusAPI.Messages;
+using NexusAPI.Structures;
+
+public class MyControllerPlugin : ControllerPluginAPI
+{
+    private readonly ControllerConfigService _configService;
+
+    public MyControllerPlugin(ControllerConfigService configService)
+    {
+        _configService = configService;
+    }
+
+    public override async Task StartService()
+    {
+        // Example: Publish a gate configuration update
+        var msg = new GateUpdateMessage();
+        msg.allGates = _configService.MainConfigs.ConfiguredGates.Select(x => x.Serializable).ToArray();
+
+        // Inject my own custom gates or modify existing ones before publishing. You can also save these changes back to the config file if desired.
+
+        msg.Publish(MessageType.GateSync);
+
+        await base.StartService();
+    }
+}
+```
+
+Real-world example from the Gates configuration page:
+The message will be distributed to all connected nodes in the cluster, allowing them to receive and process the updated data.
+
+### Multiple Service Injection
+
+You can inject multiple services into a single plugin:
+
+```csharp
+using NGController.Services;
+using NGController.PluginAPI;
+using Wpf.Ui;
+
+public class AdvancedPlugin : ControllerPluginAPI
+{
+    private readonly ControllerSQLService _sqlService;
+    private readonly DiscordService _discordService;
+    private readonly ControllerConfigService _configService;
+
+    public AdvancedPlugin(
+        ControllerSQLService sqlService,
+        DiscordService discordService,
+        ControllerConfigService configService
+    )
+    {
+        _sqlService = sqlService;
+        _discordService = discordService;
+        _configService = configService;
+    }
+
+    public override async Task StartService()
+    {
+        await base.StartService();
+    }
+}
+```
+
 ## Troubleshooting
 
 ### Plugin Won't Load
