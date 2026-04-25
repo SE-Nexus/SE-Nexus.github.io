@@ -8,6 +8,14 @@ description: Using Nexus Status LCDs to display real-time network information
 
 Nexus Status LCDs allow you to display real-time information about your Nexus network directly on text panels throughout your servers. Simply name your text panels with specific tags to automatically display network data with professional formatting.
 
+## Visual Overview
+
+Here's what all the available Status LCD displays look like:
+
+![All Nexus Status LCD displays showing sectors, servers, gates, warps, and other network information](/img/LCDs_All.png)
+
+*Complete overview of all Nexus Status LCD display types*
+
 ## Overview
 
 Status LCDs are automatically updated and can display:
@@ -28,14 +36,6 @@ To create a Status LCD, simply name a text panel (LCD or surface) with one of th
 1. Place a text panel on your grid
 2. Rename it to: `[Nexus Sectors]`
 3. The panel will automatically display all sectors and their status
-
-### Visual Overview
-
-Here's what the various Status LCD displays look like:
-
-![All Nexus Status LCD displays showing sectors, servers, gates, warps, and other network information](/img/LCDs_All.png)
-
-*Examples of different Nexus Status LCD displays*
 
 ## Display Types
 
