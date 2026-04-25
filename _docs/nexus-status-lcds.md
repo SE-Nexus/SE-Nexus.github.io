@@ -8,9 +8,7 @@ description: Using Nexus Status LCDs to display real-time network information
 
 Nexus Status LCDs allow you to display real-time information about your Nexus network directly on text panels throughout your servers. Simply name your text panels with specific tags to automatically display network data with professional formatting.
 
-## Visual Overview
-
-Here's what all the available Status LCD displays look like:
+## Overview
 
 ![All Nexus Status LCD displays showing sectors, servers, gates, warps, and other network information](/img/LCDs_All.png)
 
