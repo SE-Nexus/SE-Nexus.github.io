@@ -114,6 +114,38 @@ Programmatically triggers a spawn pad activation for a player. This sends the pl
 myNexusAPI.RemoteSpawnPadActivation(playerSteamId, 2, "MySpawnScript", "MyPrefab", "custom=data");
 ```
 
+### `GetServerStatus(byte serverId)` → `MyTuple<bool, int, int, float, string, byte>`
+Gets comprehensive status information for a specific server by ID. Returns a tuple containing the server's current status including online state, player count, simulation speed, and display name.
+
+**Returns (MyTuple):**
+- `Item1` (bool) — Is the server online
+- `Item2` (int) — Current online player count
+- `Item3` (int) — Maximum players allowed
+- `Item4` (float) — Current simulation speed multiplier (1.0 = normal)
+- `Item5` (string) — Server display name
+- `Item6` (byte) — Server ID (same as input)
+
+```cs
+// Get status for server 2
+var status = myNexusAPI.GetServerStatus(2);
+
+bool isOnline = status.Item1;
+int playerCount = status.Item2;
+int maxPlayers = status.Item3;
+float simSpeed = status.Item4;
+string serverName = status.Item5;
+byte serverId = status.Item6;
+
+if (isOnline)
+{
+	MyVisualScriptLogicProvider.CreateNotification($"{serverName}: {playerCount}/{maxPlayers} players (SimSpeed: {simSpeed:0.00}x)", 5000);
+}
+else
+{
+	MyVisualScriptLogicProvider.CreateNotification($"{serverName} is offline", 5000);
+}
+```
+
 ## Receiving Messages
 
 To receive cross-server mod messages, register a message handler using your custom mod channel ID:
